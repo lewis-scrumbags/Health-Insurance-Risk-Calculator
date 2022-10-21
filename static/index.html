@@ -12,16 +12,16 @@
     <div>
         <h2>Calculate your insurance risk:</h2>
         <h3>Body Mass Index:</h3>
-        <label>Enter your body weight in kilograms:</label> <!--We have to do it in pounds and feet/inches-->
+        <label>Enter your body weight in pounds:</label> <!--We have to do it in pounds and feet/inches-->
         <input name="weight" id="weight"/>
         <br><br>
-        <label>Enter your height in centimeters:</label>
+        <label>Enter your height in feet/inches:</label>
         <input name="height" id="height"/>
         <br><br>
-        <input onclick="calculateBMI()" type="submit" value="Calculate" class="button" />
+        <input onclick="calculations()" type="submit" value="Calculate" class="button" />
         <br><br>
-        <label>Your BMI: </label>
-        <input type="text" id="resultFieldBMI" disabled>
+        <label>Your total Score: </label> <!--Just to test our total score for now, we can add another section to show final result or just change this later (David)-->
+        <input type="text" id="totalScore" disabled>
     </div>
 </main>
 
