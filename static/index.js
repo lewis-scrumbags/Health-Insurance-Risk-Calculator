@@ -2,9 +2,10 @@
 async function calculations() { //I changed name to calculations
     //Gets data from page text fields
     const weight = document.getElementById("weight").value
-    const height = document.getElementById("height").value
+    const heightFeet = document.getElementById("heightFeet").value
+    const heightInches = document.getElementById("heightInches").value
     //converts input data to JSON format
-    const body = JSON.stringify({ weight, height });
+    const body = JSON.stringify({ weight, heightFeet, heightInches});
     //request header specifics
     const headers = { 'Content-Type': 'application/json' }
 

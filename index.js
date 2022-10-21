@@ -25,17 +25,19 @@ app.get('/about', (request, response) => {
 // Sends back BMI based on weight and height data recieved.
 app.post('/calculations', function(request, response){ // I changed the name to calculations instead of calculate bmi
 	console.log(request.body);
-  totalScore = 0
-	let weight = request.body.weight * 0.45359237;
-	let height = request.body.height * 0.01;
-	bmiresult = (weight / (height * height)).toFixed(2);
+  totalScore = 0;
+	let weight = request.body.weight * 0.45359237; //converts pounds to kilograms
+	let heightFeet = request.body.heightFeet *12; //Changes feet to inches
+  let heightInches = request.body.heightInches;
+  height =  (parseFloat(heightFeet) + parseFloat(heightInches)) / 39.37; //takes total height and converts it to meters
+	bmiresult = (weight / (height * height)).toFixed(2); //computes BMI
   bmiresult = parseFloat(bmiresult);
   if (bmiresult >= 25 && bmiresult <= 29.9){
     totalScore += 30;
   }else if (bmiresult >= 30){
     totalScore += 75;
   } else {
-    totalScore += 0
+    totalScore += 0;
   }
   const responseText = JSON.stringify(totalScore)
 	response.json(responseText)
