@@ -1,12 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Health Insurance Risk Calculator</title>
+    <title>Health Insurance Risk Calculator</title>
+        <script src="index.js"></script>
 </head>
 <body>
 <h1>Health Insurance Risk Calculator Hosted on Microsoft Azure Template</h1>
 <p>This application will calculate your risk profile for health insurance based on your body-mass index, blood pressure, age, and family history of disease. Please fill out the form with your information and press the "calculate" button to receive your results.</p>
 
+<main>
+    <div>
+        <h2>Calculate your insurance risk:</h2>
+        <h3>Body Mass Index:</h3>
+        <label>Enter your body weight in kilograms:</label>
+        <input name="weight" id="weight"/>
+        <br><br>
+        <label>Enter your height in centimeters:</label>
+        <input name="height" id="height"/>
+        <br><br>
+        <input onclick="calculateBMI()" type="submit" value="Calculate" class="button" />
+        <br><br>
+        <label>Your BMI: </label>
+        <input type="text" id="resultFieldBMI" disabled>
+    </div>
+</main>
 
 </body>
 </html>
