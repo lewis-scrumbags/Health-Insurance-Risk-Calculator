@@ -5,17 +5,18 @@
         <script src="index.js"></script>
 </head>
 <body>
-<h1>Health Insurance Risk Calculator Hosted on Microsoft Azure Template</h1>
+<h1>Health Insurance Risk Calculator</h1>
 <p>This application will calculate your risk profile for health insurance based on your body-mass index, blood pressure, age, and family history of disease. Please fill out the form with your information and press the "calculate" button to receive your results.</p>
 
 <main>
     <div>
-        <h2>Calculate your insurance risk:</h2>
+        <h3>Calculate your insurance risk:</h2>
         <form>
             <div class="form-group">
               <label for="inputage">Enter your age:</label>
               <input type="age" class="form-control" id="age" placeholder="your age">
             </div>
+            <br>
             <div class="form-group">
               <label for="selectBP">Select Your Blood Pressure:</label>
               <select class="form-control" id="selectBP">
@@ -26,9 +27,10 @@
                 <option>Crisis</option>
               </select>
             </div>
-            
+            <br>
             <div class="form-check form-check-inline">
-                <label for="form-check-input">Select Family Diseases</label>
+                <label for="form-check-input">Select Family Diseases if any:</label>
+                <br>
                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                 <label class="form-check-label" for="inlineCheckbox1">Diabetes</label>
               </div>
