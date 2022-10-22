@@ -29,7 +29,9 @@ app.post('/calculations', function(request, response){ // I changed the name to 
 	let weight = request.body.weight * 0.45359237; //converts pounds to kilograms
 	let heightFeet = request.body.heightFeet *12; //Changes feet to inches
   let heightInches = request.body.heightInches;
-  height =  (parseFloat(heightFeet) + parseFloat(heightInches)) / 39.37; //takes total height and converts it to meters
+  let age = request.body.age;
+  //Calculations for bmi
+  height = (parseFloat(heightFeet) + parseFloat(heightInches)) / 39.37; //takes total height and converts it to meters
 	bmiresult = (weight / (height * height)).toFixed(2); //computes BMI
   bmiresult = parseFloat(bmiresult);
   if (bmiresult >= 25 && bmiresult <= 29.9){
@@ -39,6 +41,21 @@ app.post('/calculations', function(request, response){ // I changed the name to 
   } else {
     totalScore += 0;
   }
+  
+  //Calculations for age
+  if (age < 30){
+    totalScore += 0;
+  }else if (age >= 30 && age < 45){
+    totalScore += 10;
+  } else if (age >= 45 && age < 60){
+    totalScore += 20;
+  } else {
+    totalScore += 30;
+  }
+  if (age == 0){                              //Checks to make sure no one enters an invalid age
+    totalScore = "Age Invalid! Try Again"
+  }  
+
   const responseText = JSON.stringify(totalScore)
 	response.json(responseText)
   console.log(responseText)
