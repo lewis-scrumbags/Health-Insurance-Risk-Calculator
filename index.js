@@ -30,6 +30,7 @@ app.post('/calculations', function(request, response){ // I changed the name to 
 	let heightFeet = request.body.heightFeet *12; //Changes feet to inches
   let heightInches = request.body.heightInches;
   let age = request.body.age;
+  let selectBP = request.body.selectBP;
   //Calculations for bmi
   height = (parseFloat(heightFeet) + parseFloat(heightInches)) / 39.37; //takes total height and converts it to meters
 	bmiresult = (weight / (height * height)).toFixed(2); //computes BMI
@@ -52,11 +53,32 @@ app.post('/calculations', function(request, response){ // I changed the name to 
   } else {
     totalScore += 30;
   }
-  if (age == 0){                              //Checks to make sure no one enters an invalid age
-    totalScore = "Age Invalid! Try Again"
-  }  
+  
+  // Blood Pressure Calculations
+  if (selectBP == "Normal"){
+    totalScore += 0;
+  } else if (selectBP == "Elevated"){
+    totalScore += 15;
+  }else if (selectBP == "Stage 1"){
+    totalScore += 30;
+  }else if (selectBP == "Stage 2"){
+    totalScore += 75;
+  } else {
+    totalScore += 100;
+  }
+  //Returns what the patients final results
+  finalOutcome = ""
+  if (totalScore <= 20){
+    finalOutcome = "You are at low risk"
+  } else if ( totalScore > 20 && totalScore <= 50){
+    finalOutcome = "You are at moderate risk"
+  }else if ( totalScore > 50 && totalScore <= 75){
+    finalOutcome = "You are at high risk"
+  }else{
+    finalOutcome = "You are at uninsurable"
+  }
 
-  const responseText = JSON.stringify(totalScore)
+  const responseText = JSON.stringify(finalOutcome)
 	response.json(responseText)
   console.log(responseText)
 })

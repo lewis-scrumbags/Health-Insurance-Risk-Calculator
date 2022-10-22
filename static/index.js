@@ -5,8 +5,9 @@ async function calculations() { //I changed name to calculations
     const heightFeet = document.getElementById("heightFeet").value
     const heightInches = document.getElementById("heightInches").value
     const age = document.getElementById("age").value
+    const selectBP = document.getElementById("selectBP").value
     //converts input data to JSON format
-    const body = JSON.stringify({ weight, heightFeet, heightInches, age});
+    const body = JSON.stringify({ weight, heightFeet, heightInches, age, selectBP});
     //request header specifics
     const headers = { 'Content-Type': 'application/json' }
 
