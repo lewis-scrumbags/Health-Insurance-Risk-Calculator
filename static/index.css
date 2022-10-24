@@ -1,3 +1,20 @@
 .title{
 text-align: center;
 }
+
+body {
+    background-color: linen;
+}
+
+h1,h2 {
+    padding: 60px;
+    text-align: center;
+    background: #a5123e;
+    color: white;
+    font-size: 30px;
+  }
+
+p {
+    font-size: 21px;
+    text-align: center;
+}
