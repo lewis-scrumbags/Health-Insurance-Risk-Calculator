@@ -12,9 +12,9 @@ async function calculations() { //I changed name to calculations
     const heightInches = document.getElementById("heightInches").value
     const age = document.getElementById("age").value
     const selectBP = document.getElementById("selectBP").value
-    const inlineCheckbox1 = document.getElementById("inlineCheckbox1").value
-    const inlineCheckbox2 = document.getElementById("inlineCheckbox2").value
-    const inlineCheckbox3 = document.getElementById("inlineCheckbox3").value
+    const inlineCheckbox1 = document.getElementById("inlineCheckbox1").checked
+    const inlineCheckbox2 = document.getElementById("inlineCheckbox2").checked
+    const inlineCheckbox3 = document.getElementById("inlineCheckbox3").checked
     //converts input data to JSON format
     const body = JSON.stringify({ weight, heightFeet, heightInches, age, selectBP, inlineCheckbox1, inlineCheckbox2, inlineCheckbox3});
     //request header specifics
