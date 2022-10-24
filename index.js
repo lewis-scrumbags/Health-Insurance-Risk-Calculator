@@ -31,6 +31,9 @@ app.post('/calculations', function(request, response){ // I changed the name to 
   let heightInches = request.body.heightInches;
   let age = request.body.age;
   let selectBP = request.body.selectBP;
+  let inlineCheckbox1 = request.body.inlineCheckbox1;
+  let inlineCheckbox2 = request.body.inlineCheckbox2;
+  let inlineCheckbox3 = request.body.inlineCheckbox3;
   //Calculations for bmi
   height = (parseFloat(heightFeet) + parseFloat(heightInches)) / 39.37; //takes total height and converts it to meters
 	bmiresult = (weight / (height * height)).toFixed(2); //computes BMI
@@ -43,14 +46,14 @@ app.post('/calculations', function(request, response){ // I changed the name to 
     totalScore += 0;
   }
   // Calculations for family-disease
-  if (document.getElementById(inlineCheckbox1).checked){
-    totalScore -= 10
+  if (inlineCheckbox1.checked){
+    totalScore += 10
   }
-  if(document.getElementById(inlineCheckbox2).checked){
-    totalScore -= 10
+  if(inlineCheckbox2.checked){
+    totalScore += 10
   }
-  if (document.getElementById(inlineCheckbox3).checked){
-    totalScore -= 10
+  if (inlineCheckbox2.checked){
+    totalScore += 10
   }
   //Calculations for age
   if (age < 30){
