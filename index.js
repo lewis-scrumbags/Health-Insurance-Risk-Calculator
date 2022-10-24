@@ -42,7 +42,14 @@ app.post('/calculations', function(request, response){ // I changed the name to 
   } else {
     totalScore += 0;
   }
-  
+  // Calculations for family-disease
+  if (document.getElementById(inlineCheckbox1).checked){
+    totalScore -= 10
+  }else if(document.getElementById(inlineCheckbox2).checked){
+    totalScore -= 10
+  }else if (document.getElementById(inlineCheckbox3).checked){
+    totalScore -= 10
+  }
   //Calculations for age
   if (age < 30){
     totalScore += 0;
