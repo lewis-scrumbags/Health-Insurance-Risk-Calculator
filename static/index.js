@@ -3,6 +3,12 @@ async function calculations() { //I changed name to calculations
     //Gets data from page text fields
     const weight = document.getElementById("weight").value
     const heightFeet = document.getElementById("heightFeet").value
+    if (heightFeet < 2){
+        document.getElementById('error').value = "2 Feet Height Minimum";
+    }
+    else{
+        document.getElementById('error').value = "";
+    }
     const heightInches = document.getElementById("heightInches").value
     const age = document.getElementById("age").value
     const selectBP = document.getElementById("selectBP").value
