@@ -52,7 +52,7 @@ app.post('/calculations', function(request, response){ // I changed the name to 
   if(inlineCheckbox2 == True){
     totalScore += 10
   }
-  if (inlineCheckbox2 == True){
+  if (inlineCheckbox3 == True){
     totalScore += 10
   }
   //Calculations for age
