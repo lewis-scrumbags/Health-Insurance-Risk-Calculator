@@ -46,13 +46,13 @@ app.post('/calculations', function(request, response){ // I changed the name to 
     totalScore += 0;
   }
   // Calculations for family-disease
-  if (inlineCheckbox1 == True){
+  if (inlineCheckbox1 == true){
     totalScore += 10
   }
-  if(inlineCheckbox2 == True){
+  if(inlineCheckbox2 == true){
     totalScore += 10
   }
-  if (inlineCheckbox3 == True){
+  if (inlineCheckbox3 == true){
     totalScore += 10
   }
   //Calculations for age
